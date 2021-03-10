@@ -1,1 +1,86 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
 
+int main()
+{
+	int fRes;
+	int sRes;
+	int CPUspeed;
+	int PerformanceScore;
+	int CoreNumber;
+	int GPUspeed;
+	int DisplayRes;
+	
+	cout << "Enter the Megahertz clock speed of your Graphics Card: ";
+	cin >> GPUspeed;
+	cout << "Enter the Megahertz clock speed of your processor: ";
+	cin >> CPUspeed;
+	
+	cout << "Enter the Number of cores your processor has: ";
+	cin >> CoreNumber;
+	
+	cout << "What is your monitors resoultion? \n1) 1280 x 720 \n2) 1920 x 1080\n3) 2560 x 1440\n4) 3840 x 2160\n" ;
+	cout << "Please select from the options above: ";
+	cin >> DisplayRes;
+	
+	if (DisplayRes == 1){
+		fRes = 1280;
+		sRes = 720;
+	PerformanceScore = ((5 * GPUspeed) + (CoreNumber * CPUspeed)) * 1;
+	//////////////////////////////////////
+	}else if(DisplayRes == 2){
+		fRes = 1920;
+		sRes = 1080;
+	PerformanceScore = ((5 * GPUspeed) + (CoreNumber * CPUspeed)) * .75;
+	//////////////////////////////////////
+	}else if(DisplayRes == 3){
+		fRes = 2560;
+		sRes = 1440;
+	PerformanceScore = ((5 * GPUspeed) + (CoreNumber * CPUspeed)) * .55;
+	//////////////////////////////////////
+	}else if(DisplayRes == 4){
+		fRes = 3840;
+		sRes = 2160;
+	PerformanceScore = ((5 * GPUspeed) + (CoreNumber * CPUspeed)) * .35;
+	
+	}
+	cout<< "\n\nComputer Hardware Graphics Quaility Recommendation Tool\n\n";
+	
+	if (PerformanceScore <= 11000){
+	cout << "GPU Clock Speed:" << GPUspeed << " MHz";
+	cout << "\nCPU Clock Speed:" << CPUspeed <<" MHz";
+	cout << "\nNumber of cores:" << CoreNumber;
+	cout << "\nMonitor Resoultion:" << fRes << "x" << sRes;
+	cout << "\nPerformance Score:" <<PerformanceScore;
+	cout << "\nRecommended Graphics Quality: Unable to Play"; 
+	}else if (PerformanceScore >11000 && PerformanceScore <= 13000){
+	cout << "GPU Clock Speed:" << GPUspeed << " MHz";
+	cout << "\nCPU Clock Speed:" << CPUspeed <<" MHz";
+	cout << "\nNumber of cores:" << CoreNumber;
+	cout << "\nMonitor Resoultion:" << fRes << "x" << sRes;
+	cout << "\nPerformance Score:" <<PerformanceScore;
+	cout << "\nRecommended Graphics Quality: Low";
+	}else if (PerformanceScore >13000 && PerformanceScore <= 15000){
+	cout << "GPU Clock Speed:" << GPUspeed << " MHz";
+	cout << "\nCPU Clock Speed:" << CPUspeed <<" MHz";
+	cout << "\nNumber of cores:" << CoreNumber;
+	cout << "\nMonitor Resoultion:" << fRes << "x" << sRes;
+	cout << "\nPerformance Score:" <<PerformanceScore;
+	cout << "\nRecommended Graphics Quality: Medium";
+	}else if (PerformanceScore >15000 && PerformanceScore <= 17000){
+	cout << "GPU Clock Speed:" << GPUspeed << " MHz";
+	cout << "\nCPU Clock Speed:" << CPUspeed <<" MHz";
+	cout << "\nNumber of cores:" << CoreNumber;
+	cout << "\nMonitor Resoultion:" << fRes << "x" << sRes;
+	cout << "\nPerformance Score:" <<PerformanceScore;
+	cout << "\nRecommended Graphics Quality: High";
+	}else if (PerformanceScore >17000 ){
+	cout << "GPU Clock Speed:" << GPUspeed << " MHz";
+	cout << "\nCPU Clock Speed:" << CPUspeed <<" MHz";
+	cout << "\nNumber of cores:" << CoreNumber;
+	cout << "\nMonitor Resoultion:" << fRes << "x" << sRes;
+	cout << "\nPerformance Score:" <<PerformanceScore;
+	cout << "\nRecommended Graphics Quality: Ultra";
+}
+}
